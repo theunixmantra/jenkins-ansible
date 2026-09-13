@@ -13,4 +13,4 @@
 
      - name: Print hostname
        debug:
-         msg: "The hostname of the sever is {{ myhostname }}"
+         msg: "The hostname of the sever is {{ myhostname.stdout }}"
