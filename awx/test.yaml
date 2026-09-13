@@ -1,0 +1,16 @@
+- name: Test pay to run on awx
+  hosts: docker.skynet.com
+  become: true
+  tasks:
+     - name: Get hostname
+       command: hostname
+       register: myhostname
+
+     - name: Install httpd server
+       dnf:
+         name: httpd
+         state: latest
+
+     - name: Print hostname
+       debug:
+         msg: "The hostname of the sever is {{ myhostname }}"
